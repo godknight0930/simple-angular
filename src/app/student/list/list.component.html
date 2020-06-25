@@ -1,0 +1,57 @@
+<div class="class-list mt-5">
+  <div>
+    <h1 class="table-header text-center">
+      Student list Table
+    </h1>
+    <div class="header-field">
+      <button class="add-class" mat-raised-button color="accent" routerLink="/student/add">Add</button>
+      <mat-form-field style=" width: 30%; margin-right: 1%; float: right;">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+    <br>
+    <div class="datatable" style="overflow-x: auto;">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <ng-container matColumnDef="first name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.first_name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="last name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.last_name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="class">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Class </th>
+          <td mat-cell *matCellDef="let row"> {{row.class}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date of birth">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Class </th>
+          <td mat-cell *matCellDef="let row"> {{row.date_of_birth}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+          <td mat-cell *matCellDef="let row">
+            <!-- <button mat-raised-button [ngClass]="'green-800'" [routerLink]="['/student/view', row.id]"> View </button> -->
+            <button mat-raised-button [ngClass]="'orange-800'" [routerLink]="['/student/edit', row.id]">
+              Edit
+            </button>
+            <!-- <button mat-raised-button [ngClass]="'light-blue-A700'" (click)="delete(row.id)">
+              Delete
+            </button> -->
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container class-detail">
+  <div class="row">
+    <div class="offset-md-1 col-md-10">
+      <div class="text-line">
+        Code: <span class="detail-data">{{this.code}}</span>
+      </div>
+
+      <div class="text-line">
+        Name: <span class="detail-data">{{this.name}}</span>
+      </div>
+
+      <div class="text-line">
+        Maximum Students: <span class="detail-data">{{this.maximum_students}}</span>
+      </div>
+
+      <div class="text-line">
+        Status: <span class="detail-data">{{this.status ? 'Opened' : 'Closed'}}</span>
+      </div>
+
+      <div class="text-line">
+        Description: <span class="detail-data">{{this.description}}</span>
+      </div>
+
+      <button class="add-class" mat-raised-button color="accent" routerLink="/class/list">Return</button>
+    </div>
+  </div>
+</div>

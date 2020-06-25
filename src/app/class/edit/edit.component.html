@@ -1,0 +1,41 @@
+<div class="class-form">
+  <div>
+    <h1 class="text-center">Edit Class</h1>
+    <div style="width: 100%;">
+      <div>
+        <input type="hidden" name="ID" [(ngModel)]="ID">
+        <mat-form-field>
+          <mat-label>Code</mat-label>
+          <input matInput placeholder="Code" [(ngModel)]=code>
+          <mat-error>
+            Code is required
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Name" [(ngModel)]=name>
+          <mat-error>
+            Name is required
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Maximum_students</mat-label>
+          <input matInput placeholder="Maximum_students" [(ngModel)]=maximum_students>
+          <mat-error>
+            Maximum Students is required
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-checkbox [(ngModel)]=status>Status(Opened/Closed)</mat-checkbox>
+        <br>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]=description></textarea>
+        </mat-form-field>
+      </div>
+      <button (click)="editClass()" mat-raised-button>Update</button>
+    </div>
+  </div>
+</div>

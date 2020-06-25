@@ -1,0 +1,46 @@
+<div class="class-form">
+  <div>
+    <h1 class="text-center">Edit Student</h1>
+    <div style="width: 100%;">
+      <div>
+        <input type="hidden" name="ID" [(ngModel)]="ID">
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First Name" [(ngModel)]="first_name">
+          <mat-error>
+            First Name is required
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last Name" [(ngModel)]="last_name">
+          <mat-error>
+            Last Name is required
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Class</mat-label>
+          <mat-select [(ngModel)]="class">
+            <mat-option *ngFor="let class of classes" [value]="class.id">
+              {{class.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error>
+            Class is required
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" (dateChange)="birth($event.value)" [(ngModel)]="date_of_birth">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <button (click)="editStudent()" mat-raised-button>Update</button>
+    </div>
+  </div>
+</div>

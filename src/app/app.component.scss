@@ -1,0 +1,22 @@
+.welcome {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+}
+
+.header {
+  margin-top: 150px;
+  font-weight: 600;
+  color: green;
+}
+
+.enter {
+  margin-top: 50px;
+  width: 200px;
+  font-size: 30px;
+  border: solid orangered 1px;
+  background: orangered;
+  color: white;
+  border-radius: 5px;
+}

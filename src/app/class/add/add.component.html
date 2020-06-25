@@ -1,0 +1,42 @@
+<div class="class-form">
+  <div>
+    <h1 class="text-center">Add Class</h1>
+    <div style="width: 100%;">
+      <form [formGroup]="class_form" (ngSubmit)="addClass()">
+        <div>
+          <mat-form-field>
+            <mat-label>Code</mat-label>
+            <input matInput placeholder="Code" formControlName="code">
+            <mat-error>
+              Code is required
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" formControlName="name">
+            <mat-error>
+              Name is required
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Maximum_students</mat-label>
+            <input matInput placeholder="Maximum_students" formControlName="maximum_students">
+            <mat-error>
+              Maximum Students is required
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-checkbox formControlName="status">Status(Opened/Closed)</mat-checkbox>
+          <br>
+          <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Ex. It makes me feel..." formControlName="description"></textarea>
+          </mat-form-field>
+        </div>
+        <button mat-raised-button>Add</button>
+      </form>
+    </div>
+  </div>
+</div>
